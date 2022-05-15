@@ -1,0 +1,78 @@
+
+.grid-container{
+    display: grid;
+    height:min-content 100vh;
+    grid-gap: 10px;
+    grid-template-rows: auto;
+    grid-template-columns:repeat(3,32%);
+    background-color: rgb(220, 221, 214);
+}
+#chooseRecipe{
+    width: 80%;
+}
+.element-1{
+    grid-column: span 3
+}
+.element-error{
+    visibility:hidden;
+    grid-column: span3;
+}
+.search{
+    width: 16%;
+}
+.recipe{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction:column; 
+    justify-content: space-between;
+    align-content:stretch;
+    background-color:#F8DE7E ;
+}
+.recipePicture{
+    align-self: center;
+    background: silver;
+    width:40%;
+    height: 30%;
+}
+
+.popUp-container{
+    background-color: burlywood;
+    position: absolute;
+
+}
+.ingredient{
+    flex-grow:2;
+    align-self: auto;
+}
+
+.ingredients-container{
+    
+    align-self: start;
+    justify-self: start;
+}
+.ingredientsLabel{
+    grid-column: span 3;
+    align-self: start;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+}
+.ingredients_list{
+    display: grid;
+    width:90%;
+    grid-template-rows: auto;
+    grid-template-columns:repeat(3,32%);
+    grid-gap: minmax(2,auto);
+    height: auto;
+
+}
+
+.title{
+    height: 4%;
+    width:auto;
+    align-self: start;
+    justify-self: start;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}

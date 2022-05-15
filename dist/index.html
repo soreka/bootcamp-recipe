@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="element element-1" >
+            <input type="text" name="chooseRecipe" id="chooseRecipe" placeholder="type in an igredient of Your choice">
+            <button class="search" >GET RECIPE</button>
+            <h1 class=" element element-error"></h1>
+        </div> 
+    </div>
+
+    
+    <script id="popUp-template" type="text/x-handlebars-template">
+        <div class="popUp-container">
+        <button class="exit" onclick="removeMe()">Exit</button>
+        {#each stats}
+            <div> {{@key}} {{this}} </div>
+        {/each}
+        </div>
+    </script>
+
+    <script id="recipe-template" type="text/x-handlebars-template">
+        <div class="recipe" data-firstIngredient={{firstIngredient}} >
+            <a class="title" href= {{href}} > {{title}}</a>
+            <img class="recipePicture" src= {{thumbnail}} alt="Recipe Img " >
+            <span class="ingredients-container">
+                <ul class="ingredients_list">
+                <h5 class="ingredientsLabel">Ingredients :-</h5>
+                {{#each ingredients}}
+                    <li class="ingredient">{{this}}</li>
+                {{/each}}
+                </ul>
+            </span>
+            
+        </div>      
+    </script>
+    
+    <script>
+        let removeMe= function (params) {
+            $(".popUp-container").remove()
+        
+    }    
+    </script>
+
+    <script src="view-recipes.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
